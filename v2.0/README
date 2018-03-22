@@ -1,0 +1,62 @@
+This file describes how to use the OJSapp to import and export sections and unpublished articles. IT IS NOT YET FINISHED AS SOME INFORMATIONS ARE STILL TO BE ADDED
+
+This application consists on the following directories and files:
+
+1) config.php: 
+	the script that holds informations about the tables needed and some functions
+
+2) helperFunctions.php:    
+	This script holds functions used to help perform specific actions used by all the important functions
+
+3) db2xml.php:    
+	The script with functions that get data from the database and store in an xml file
+
+4) xml2db.php: 
+	This script holds functions that get data from xml files and load into the database
+
+5) appFunctions.php:
+	This script holds the core functions of the Application
+
+6) OJSapp.php:
+	The script that actually runs the Application
+
+7) modifyUsers.php:
+	The script to modify the usernames of the users to be imported that have a username which is already being used by someone else
+
+8) correctAbbrevs.php:
+	This script was created to correct a problem in the issues importation of the journal "Fractal: Revista de Psicologia".
+	The problem was that 2 different sections had the same abbreviation (article_settings: setting_name="abbrev")
+	This script might be modified in order to correct a similar problem in other journals
+
+9) indent.xsl:
+	This file is to be used by a XSLTProcessor to indent xml files
+
+10) indent_xml_file.php:
+	This script's name is pretty good at describing what it does
+
+11) special_indent_xml_file.php:
+	This script is to be used instead of 'indent_xml_file.php' if the xml file that is to be indented has html entities e.g: &ccedil; or &atilde;
+
+12) cleanEncoding.php:
+	This script holds functions to translate iso-8859-1 text into utf-8
+
+13) list_issues.php:
+	This script creates a .txt file with the ids of all the issues of a journal selected by the user
+
+Directory dataMappings:
+	This directory holds xml files that map data from the journal exported to the journal imported
+	It has a subdirectory named backup which stores a backup of the current dataMappings.xml file whenever a the OJSapp imports something
+
+--------------------------------------------------------------------------------------------------	
+	Note: To export users, published articles and issues use the OJS importExport tool.
+--------------------------------------------------------------------------------------------------
+
+EXPORTING AND IMPORTING SECTIONS AND/OR UNPUBLISHED ARTICLES
+
+The app is quite easy to use as it explains itself while executing, leaving the user with little need for a instructions manual.
+Even so, the steps required to use it are the following:
+
+Everytime the app is run, it displays a menu for the user to choose the actions to take.
+
+
+
